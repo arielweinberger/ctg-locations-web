@@ -9,7 +9,7 @@ export const setShowPublic = (showPublic) => {
 
 export const fetchLocations = (showPublic = false) => {
   return async (dispatch) => {
-    const result = await axios.get(`http://localhost:3000/locations?public=${showPublic}`, {
+    const result = await axios.get(`https://boiling-sierra-59212.herokuapp.com/locations?public=${showPublic}`, {
       withCredentials: true,
     });
 
@@ -24,7 +24,7 @@ export const fetchLocations = (showPublic = false) => {
 
 export const addLocation = (latitude, longitude, description, isPublic) => {
   return async (dispatch) => {
-    const result = await axios.post('http://localhost:3000/locations', {
+    const result = await axios.post('https://boiling-sierra-59212.herokuapp.com/locations', {
       latitude,
       longitude,
       description,
@@ -44,7 +44,7 @@ export const addLocation = (latitude, longitude, description, isPublic) => {
 
 export const deleteLocation = (id) => {
   return async (dispatch) => {
-    await axios.delete(`http://localhost:3000/locations/${id}`, {
+    await axios.delete(`https://boiling-sierra-59212.herokuapp.com/locations/${id}`, {
       withCredentials: true,
     });
 

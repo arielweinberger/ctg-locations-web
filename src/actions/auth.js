@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const signUp = (username, password) => {
   return async (dispatch) => {
-    await axios.post('http://localhost:3000/auth/signup', {
+    await axios.post('https://boiling-sierra-59212.herokuapp.com/auth/signup', {
       username,
       password, 
     });
@@ -15,7 +15,7 @@ export const signUp = (username, password) => {
 
 export const signIn = (username, password) => {
   return async (dispatch) => {
-    await axios.post('http://localhost:3000/auth/signin', {
+    await axios.post('https://boiling-sierra-59212.herokuapp.com/auth/signin', {
       username,
       password, 
     }, {
