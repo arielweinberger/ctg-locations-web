@@ -2,10 +2,6 @@
   "name": "ctg-locations-web",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "12.x",
-    "npm": "6.x"
-  },
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -22,8 +18,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^1.0.0"
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
