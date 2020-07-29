@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const signUp = (username, password) => {
   return async (dispatch) => {
-    await axios.post('https://boiling-sierra-59212.herokuapp.com/auth/signup', {
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/signup`, {
       username,
       password, 
     });
@@ -15,7 +15,7 @@ export const signUp = (username, password) => {
 
 export const signIn = (username, password) => {
   return async (dispatch) => {
-    await axios.post('https://boiling-sierra-59212.herokuapp.com/auth/signin', {
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/signin`, {
       username,
       password, 
     }, {

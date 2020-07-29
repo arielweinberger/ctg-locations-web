@@ -25,7 +25,6 @@ export default function LocationsPage() {
 
   useEffect(() => {
     dispatch(fetchLocations(showPublicLocations));
-    console.log('Locations fetched');
   });
 
   return (

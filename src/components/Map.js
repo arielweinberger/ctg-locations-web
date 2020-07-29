@@ -2,17 +2,16 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import LocationMarker from './LocationMarker';
 import { useSelector, useDispatch } from 'react-redux';
-import { addLocation } from '../actions/locations';
+import { showModal } from '../actions/ui';
 
 function Map() {
   const locations = useSelector((state) => state.locations);
+  const mapCenter = useSelector((state) => state.mapCenter);
   const dispatch = useDispatch();
 
   const renderMarkers = () =>
     locations.map((location) => {
       const { latitude, longitude, description, id, isPublic } = location;
-
-      console.log(location);
 
       return (
         <LocationMarker
@@ -27,13 +26,7 @@ function Map() {
 
   const handleAddLocation = event => {
     const { lat, lng } = event;
-    const description = window.prompt('Choose a location name');
-
-    if (!description) {
-      return;
-    }
-
-    dispatch(addLocation(lat, lng, description, true));
+    dispatch(showModal(lat, lng));
   };
 
   const key = process.env.REACT_APP_API_KEY;
@@ -42,11 +35,11 @@ function Map() {
   return (
     <GoogleMapReact
       bootstrapURLKeys={bootstrapURLKeys}
-      defaultCenter={{
-        lat: 52.3703911,
-        lng: 4.8905929,
+      center={{
+        lat: mapCenter.latitude,
+        lng: mapCenter.longitude,
       }}
-      defaultZoom={15}
+      defaultZoom={17}
       onClick={handleAddLocation}
     >
       {renderMarkers()}

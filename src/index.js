@@ -11,6 +11,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(locationsReducer, composeWithDevTools(applyMiddleware(thunk)));
 
+console.log('Backend url:', process.env.REACT_APP_BACKEND_URL);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
