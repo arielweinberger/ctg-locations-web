@@ -4,7 +4,7 @@ import LocationMarker from './LocationMarker';
 import { useSelector, useDispatch } from 'react-redux';
 import { showModal } from '../actions/ui';
 
-function Map() {
+function MapCanvas() {
   const locations = useSelector((state) => state.locations);
   const mapCenter = useSelector((state) => state.mapCenter);
   const dispatch = useDispatch();

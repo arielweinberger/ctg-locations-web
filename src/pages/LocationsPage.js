@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
-import Map from '../components/Map';
+import MapCanvas from '../components/Map';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLocations } from '../actions/locations';
 import SideMenu from '../components/SideMenu/SideMenu';
@@ -30,7 +30,7 @@ export default function LocationsPage() {
   return (
     <LocationsContainer>
       <MapContainer>
-        <Map />
+        <MapCanvas />
       </MapContainer>
       <SideMenuContainer>
         <SideMenu />
